@@ -1,0 +1,48 @@
+{
+	"folders": [
+		{
+			"name": "TwitterLikeSmallSNS",
+			"path": "."
+		}
+	],
+	"settings": {
+		"intelephense.diagnostics.run": "onType",
+		"files.autoSave": "afterDelay",
+		"namespaceResolver.autoSort": true,
+		"php-cs-fixer.onsave": true,
+		"php-cs-fixer.executablePath": "${workspaceFolder}/backend/vendor/bin/php-cs-fixer",
+		"php.validate.run": "onSave",
+		"php-cs-fixer.autoFixByBracket": false,
+		"php-cs-fixer.rules": "@PSR2",
+		"[php]": {
+			"editor.defaultFormatter": "bmewburn.vscode-intelephense-client",
+			"editor.formatOnSave": true,
+			"editor.formatOnSaveMode": "file",
+		},
+		"[javascript]": {
+			"editor.defaultFormatter": "esbenp.prettier-vscode",
+			"editor.formatOnSave": true,
+			"editor.formatOnSaveMode": "file",
+			"editor.codeActionsOnSave": {
+				"source.fixAll.eslint": true
+			}
+		},
+		"[typescript]": {
+			"editor.defaultFormatter": "esbenp.prettier-vscode",
+			"editor.formatOnSave": true,
+			"editor.codeActionsOnSave": {
+				"source.fixAll.eslint": true
+			},
+		},
+		"prettier.enabledLanguageIds": [
+			"css",
+			"javascript",
+			"json",
+			"markdown",
+			"mdx",
+			"scss",
+			"vue",
+			"yaml"
+		],
+    }
+}

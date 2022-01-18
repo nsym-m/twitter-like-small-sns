@@ -1,0 +1,18 @@
+{
+    "recommendations": [
+        "mehedidracula.php-namespace-resolver",
+        "felixfbecker.php-intellisense",
+        "bmewburn.vscode-intelephense-client",
+        "felixfbecker.php-pack",
+        "felixfbecker.php-debug",
+        "junstyle.php-cs-fixer",
+        "dbaeumer.vscode-eslint",
+        "rvest.vs-code-prettier-eslint",
+        "octref.vetur",
+        "editorconfig.editorconfig",
+        "onecentlin.laravel5-snippets",
+        "amiralizadeh9480.laravel-extra-intellisense",
+        "eamodio.gitlens",
+        "simonsiefke.prettier-vscode"
+    ]
+}
