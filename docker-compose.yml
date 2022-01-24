@@ -15,6 +15,7 @@ services:
       dockerfile: ./docker/node/Dockerfile
     ports:
       - 3000:3000
+    restart: always
     volumes:
       - ./frontend:/var/www/html:cached
   web:
@@ -39,8 +40,10 @@ services:
       - small-sns-db:/var/lib/mysql:cached
       - ./docker/mysql/socket:/var/run/mysqld
     environment:
-      - MYSQL_DATABASE=sns
-      - MYSQL_ROOT_PASSWORD=pass
+      MYSQL_DATABASE: sns
+      MYSQL_ROOT_PASSWORD: pass
+      MYSQL_USER: user
+      MYSQL_PASSWORD: pass
   redis:
     image: redis:latest
     ports:
