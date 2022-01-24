@@ -1,36 +1,42 @@
 <template>
   <v-app>
-    <v-list>
-      <template v-for="(item, index) in items">
-        <v-divider :key="`div-${index}`"></v-divider>
-        <v-list-item :key="index">
-          <v-list-item-avatar>
-            <v-img :src="`https://i.pravatar.cc/180?img=1`" size="40"></v-img>
-          </v-list-item-avatar>
-          <v-list-item-content>
-            <v-list-item-title>aaaa</v-list-item-title>
-          </v-list-item-content>
-        </v-list-item>
-      </template>
-    </v-list>
+    <TimeLine :question="comments" />
     <PostComment />
   </v-app>
 </template>
 
 <script>
 
+import TimeLine from '@/components/TimeLine.vue'
 import PostComment from '@/components/PostComment.vue'
 
 export default {
-  components: PostComment,
+  components: {
+    TimeLine,
+    PostComment
+  },
   data: () => ({
-    items: {
-      title: 'aa'
-    },
+    comments: [],
     dialog: false,
     rssForm: {
       url: ''
     }
-  })
+  }),
+  async created () {
+    await this.getComments()
+  },
+  methods: {
+    async getComments () {
+      try {
+        const result = await axios.get('/api/v1/comment/all');
+        if (result.data) {
+          this.comments = result.data
+        }
+      } catch (err) {
+        this.selected_users_error = true
+        console.log(err.response.data)
+      }
+    }
+  }
 }
 </script>
