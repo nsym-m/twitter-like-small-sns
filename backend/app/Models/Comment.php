@@ -3,9 +3,10 @@ declare(strict_types=1);
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\JsonResponse;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Comment extends Model
 {
@@ -25,11 +26,22 @@ class Comment extends Model
     /**
      * Undocumented function
      *
-     * @return void
+     * @return
      */
     public function getPagingAllUserTimeline()
     {
-
+        return DB::table('comments')
+            ->select([
+                'comments.id',
+                'comments.image',
+                'comments.created_at',
+                'users.user_code',
+                'users.user_name',
+                'users.profile_image',
+            ])
+            ->leftJoin('users', 'comments.user_id', '=', 'users.id')
+            ->orderBy('comments.created_at')
+            ->paginate();
     }
 
     /**
