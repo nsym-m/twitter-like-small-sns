@@ -3,10 +3,9 @@ declare(strict_types=1);
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\CommentStoreRequest;
-use App\Models\User;
 use App\Models\Comment;
-use App\Http\Requests\UserEditRequest;
+use Illuminate\Http\JsonResponse;
+use App\Http\Requests\CommentStoreRequest;
 
 class CommentController extends Controller
 {
@@ -33,22 +32,24 @@ class CommentController extends Controller
     /**
      * 全ユーザーのタイムライン
      *
-     * @return json
+     * @return JsonResponse
      */
     public function allUserTimeline()
     {
-        return $this->comment->getPagingAllUserTimeline();
+        return response()->json([
+            'data' => $this->comment->getPagingAllUserTimeline()
+        ]);
     }
 
     /**
      * 自分だけのタイムライン
      *
-     * @return json
+     * @return JsonResponse
      */
     public function onlyUserTimeline()
     {
-        return $this->comment->getPagingAllUserTimeline();
+        return response()->json([
+            'data' => $this->comment->getPagingAllUserTimeline()
+        ]);
     }
-
-
 }
