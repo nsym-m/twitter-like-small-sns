@@ -94,16 +94,16 @@ export default {
       login: '/login',
       logout: '/login',
       callback: false,
-      home: '/',
+      home: '/'
     },
     strategies: {
       local: {
         endpoints: {
           login: { url: 'api/login', method: 'post', propertyName: 'token' },
-          user: { url: 'api/me', method: 'get', propertyName: false},
+          user: { url: 'api/me', method: 'get', propertyName: false },
           logout: false
-        },
+        }
       }
     }
-  },
+  }
 }

@@ -18,9 +18,7 @@
 
 <script>
 export default {
-  date: () => {
-
-  },
+  date: () => {},
   methods: {
     login: async () => {
       try {
@@ -34,5 +32,4 @@ export default {
 }
 </script>
 
-<style>
-</style>
+<style></style>

@@ -6,7 +6,6 @@
 </template>
 
 <script>
-
 import TimeLine from '@/components/TimeLine.vue'
 import PostComment from '@/components/PostComment.vue'
 
@@ -28,7 +27,7 @@ export default {
   methods: {
     async getComments () {
       try {
-        const result = await axios.get('/api/v1/comment/all');
+        const result = await axios.get('/api/v1/comment/all')
         if (result.data) {
           this.comments = result.data
         }

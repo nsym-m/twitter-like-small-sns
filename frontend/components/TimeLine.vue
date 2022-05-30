@@ -26,6 +26,5 @@ export default {
   //   questionTypes: QreConstants.questionTypes,
   //   modal_dismiss: null
   // })
-
 }
 </script>
